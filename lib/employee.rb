@@ -5,7 +5,7 @@ class Employee < ActiveRecord::Base
   validates :hourly_rate, numericality: { only_integer: true, in: 40..200 }
   validates :store, presence: true
 
-  after_create :generate_password
+  before_create :generate_password
 
   private
 
